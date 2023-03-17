@@ -1,5 +1,5 @@
 variable "aws_key_pair" {
-  default = "~/aws/aws_keys/udemy_test.pem"
+  default = "~/.ssh/udemy_test.pem"
 }
 
 provider "aws" {
@@ -33,7 +33,7 @@ resource "aws_security_group" "http_server_sg" {
 }
 
 resource "aws_instance" "http_server" {
-  ami = "ami-0557a15b87f6559cf"
+  ami = "ami-0c9978668f8d55984"
   key_name = "udemy_test"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
